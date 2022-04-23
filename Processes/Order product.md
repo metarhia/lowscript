@@ -6,9 +6,9 @@
 * Form `Payment`
 * Payment
   + Notify "Payment was successful"
-  > - Return payment
+  - > Return payment
 * Pick up from the warehouse
-  > - Return to the warehouse
+  - > Return to the warehouse
 * Shipping by carrier
   + Notify "The product was successfully sent"
   - Notify "The product was not sent"
