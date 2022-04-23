@@ -1,0 +1,2 @@
+CREATE USER marcus WITH PASSWORD 'marcus';
+CREATE DATABASE bos OWNER marcus;
