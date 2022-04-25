@@ -3,7 +3,13 @@
 const metatests = require('metatests');
 const lowscript = require('..');
 
-metatests.test('Stub', async (test) => {
-  test.strictSame(lowscript, {});
+metatests.test('Lowscript parsing example', async (test) => {
+  const src = await lowscript.loadFlow('Order product');
+  const script = lowscript.parseScript(src);
+  test.strictSame(script[0].name, 'Order product');
+  test.strictSame(script[0].body[0].command, 'Form `Order`');
+  test.strictSame(script[0].body[1].fail.length, 1);
+  test.strictSame(script[0].body[3].success.length, 1);
+  test.strictSame(script[0].body[3].finalization.length, 1);
   test.end();
 });
