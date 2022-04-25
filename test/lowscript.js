@@ -4,7 +4,8 @@ const metatests = require('metatests');
 const lowscript = require('..');
 
 metatests.test('Lowscript parsing example', async (test) => {
-  const src = await lowscript.loadFlow('Order product');
+  const filePath = `./test/examples/Order product.md`;
+  const src = await lowscript.loadFlow(filePath);
   const script = lowscript.parseScript(src);
   test.strictSame(script[0].name, 'Order product');
   test.strictSame(script[0].body[0].command, 'Form `Order`');
