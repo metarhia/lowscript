@@ -1,3 +1,0 @@
-({
-  amount: 'number',
-});
