@@ -2,9 +2,8 @@
 
 const fsp = require('fs').promises;
 
-const loadFlow = async (name) => {
-  const filePath = `./Processes/${name}.md`;
-  const buffer = await fsp.readFile(filePath);
+const loadFlow = async (fileName) => {
+  const buffer = await fsp.readFile(fileName);
   return buffer.toString();
 };
 
