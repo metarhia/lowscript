@@ -1,6 +1,7 @@
 # Lowscript
 
 Set of DSL syntaxes for low-code with Metarhia technology stack
+
 - Markdown-based process modeling language
 - Limited subset of JavaScript for domain logic
 
