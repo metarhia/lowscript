@@ -42,4 +42,4 @@
 # Shipping by carrier
 
 * `selectCarrier(Order, Package): Carrier`
-* `makeShopment(Package, Carrier): Shipment`
+* `makeShipment(Package, Carrier): Shipment`
