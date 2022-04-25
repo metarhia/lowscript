@@ -1,3 +1,0 @@
-({
-  confirmed: 'boolean',
-});
