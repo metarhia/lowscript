@@ -34,12 +34,12 @@
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\""
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "^8.14.0",
     "eslint-config-metarhia": "^7.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "metatests": "^0.7.2",
-    "prettier": "^2.4.0"
+    "metatests": "^0.8.2",
+    "prettier": "^2.6.2"
   }
 }
