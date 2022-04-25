@@ -13,7 +13,7 @@
   ],
   "main": "lowscript.js",
   "engines": {
-    "node": "^12.9 || 14 || 16"
+    "node": "^12.9 || 14 || 16 || 17 || 18"
   },
   "repository": {
     "type": "git",
