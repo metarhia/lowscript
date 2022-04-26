@@ -1,6 +1,6 @@
 {
   "name": "lowscript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Timur Shemsedinov <timur.shemsedinov@gmail.com>",
   "license": "MIT",
   "description": "Lowcode is a limited subset of JavaScript for low-code with Metarhia technology stack",
