@@ -8,43 +8,53 @@ const notEmpty = (s) => s.length > 0;
 
 const cutBullet = (s, len = 1) => s.substring(len).trim();
 
-const steps = [
-  /* step , prefix */
-  ['command', '*'],
-  ['finalization', '- >'],
-  ['fail', '-'],
-  ['success', '+'],
-  // new steps can be added here
+class DomainStep {
+  constructor(command) {
+    this.command = command;
+    this.success = [];
+    this.fail = [];
+    this.finalization = [];
+  }
+}
+
+class DomainProcedure {
+  constructor(name) {
+    this.name = name;
+    this.body = [];
+  }
+}
+
+const BULLETS = [
+  ['*', 'command'],
+  ['- >', 'finalization'],
+  ['-', 'fail'],
+  ['+', 'success'],
 ];
 
 const parseLine = (line) => {
   const str = line.trim();
-  const [step, prefix] = steps.find((cond) => str.startsWith(cond[1]));
-  return { step, parsed: cutBullet(str, prefix.length) };
+  const [bullet, type] = BULLETS.find(([bullet]) => str.startsWith(bullet));
+  return { type, text: cutBullet(str, bullet.length) };
 };
 
-const parseProc = (script) => {
+const last = (array) => array[array.length - 1];
+
+const parseProcedure = (script) => {
   const pos = script.indexOf('\n');
   const name = script.substring(0, pos);
+  const procedure = new DomainProcedure(name);
   const lines = script.substring(pos).trim().split('\n');
-  const body = [];
   for (const line of lines) {
-    const { step, parsed } = parseLine(line);
-    if (step === 'command') {
-      body.push({
-        command: parsed,
-        success: [],
-        fail: [],
-        finalization: [],
-      });
+    const { type, text } = parseLine(line);
+    if (type === 'command') {
+      procedure.body.push(new DomainStep(text));
     } else {
-      const last = body[body.length - 1];
-      last[step].push(parsed);
+      last(procedure.body)[type].push(text);
     }
   }
-  return { name, body };
+  return procedure;
 };
 
-const parseScript = (src) => src.split('# ').filter(notEmpty).map(parseProc);
+const parseProcess = (src) => src.split('# ').filter(notEmpty).map(parseProcedure);
 
-module.exports = { loadFlow, parseScript };
+module.exports = { loadFlow, parseProcess };
