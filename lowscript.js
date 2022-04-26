@@ -1,9 +1,5 @@
 'use strict';
 
-const fsp = require('fs').promises;
-
-const loadFlow = (fileName) => fsp.readFile(fileName, { encoding: 'utf8' });
-
 const notEmpty = (s) => s.length > 0;
 
 const cutBullet = (s, len = 1) => s.substring(len).trim();
@@ -39,11 +35,11 @@ const parseLine = (line) => {
 
 const last = (array) => array[array.length - 1];
 
-const parseProcedure = (script) => {
-  const pos = script.indexOf('\n');
-  const name = script.substring(0, pos);
+const parseProc = (src) => {
+  const pos = src.indexOf('\n');
+  const name = src.substring(0, pos);
   const procedure = new DomainProcedure(name);
-  const lines = script.substring(pos).trim().split('\n');
+  const lines = src.substring(pos).trim().split('\n');
   for (const line of lines) {
     const { type, text } = parseLine(line);
     if (type === 'command') {
@@ -55,6 +51,6 @@ const parseProcedure = (script) => {
   return procedure;
 };
 
-const parseProcess = (src) => src.split('# ').filter(notEmpty).map(parseProcedure);
+const parseProcess = (src) => src.split('# ').filter(notEmpty).map(parseProc);
 
-module.exports = { loadFlow, parseProcess };
+module.exports = { parseProcess };
