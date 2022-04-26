@@ -2,7 +2,7 @@
 
 const notEmpty = (s) => s.length > 0;
 
-const cutBullet = (s, len = 1) => s.substring(len).trim();
+const cutString = (s, len = 1) => s.substring(len).trim();
 
 class DomainStep {
   constructor(command) {
@@ -30,7 +30,7 @@ const BULLETS = [
 const parseLine = (line) => {
   const str = line.trim();
   const [bullet, type] = BULLETS.find(([bullet]) => str.startsWith(bullet));
-  return { type, text: cutBullet(str, bullet.length) };
+  return { type, text: cutString(str, bullet.length) };
 };
 
 const last = (array) => array[array.length - 1];
@@ -39,7 +39,7 @@ const parseProc = (src) => {
   const pos = src.indexOf('\n');
   const name = src.substring(0, pos);
   const procedure = new DomainProcedure(name);
-  const lines = src.substring(pos).trim().split('\n');
+  const lines = cutString(src, pos).split('\n');
   for (const line of lines) {
     const { type, text } = parseLine(line);
     if (type === 'command') {

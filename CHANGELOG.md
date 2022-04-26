@@ -2,6 +2,8 @@
 
 ## [Unreleased][unreleased]
 
+- Rename cutBullet to cutString and find +1 place to use it
+
 ## [0.0.2][] - 2022-04-26
 
 - Add typings and classes
