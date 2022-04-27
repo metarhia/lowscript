@@ -1,3 +1,5 @@
+import { EventEmitter } from 'events';
+
 export interface DomainStep {
   command: string;
   success: Array<string>;
@@ -10,4 +12,11 @@ export interface DomainProcedure {
   body: Array<DomainStep>;
 }
 
-export function parseProcess(src: string): Array<DomainProcedure>;
+export class Runtime extends EventEmitter {
+  processes: Map<string, DomainProcedure>;
+  constructor();
+  register(processes: Array<DomainProcedure>);
+  exec(name: string);
+}
+
+export function parseMarkdown(src: string): Array<DomainProcedure>;

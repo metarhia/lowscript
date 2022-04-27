@@ -4,10 +4,10 @@ const fsp = require('fs').promises;
 const metatests = require('metatests');
 const lowscript = require('..');
 
-metatests.test('Lowscript parsing example', async (test) => {
-  const fileName = `./test/examples/Order product.md`;
+metatests.test('Markdown parsing example', async (test) => {
+  const fileName = `./test/examples/Store.md`;
   const src = await fsp.readFile(fileName, 'utf8');
-  const bp = lowscript.parseProcess(src);
+  const bp = lowscript.parseMarkdown(src);
   test.strictSame(bp[0].name, 'Order product');
   test.strictSame(bp[0].body[0].command, 'Form `Order`');
   test.strictSame(bp[0].body[1].fail.length, 1);
