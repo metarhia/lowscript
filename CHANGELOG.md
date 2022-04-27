@@ -3,6 +3,7 @@
 ## [Unreleased][unreleased]
 
 - Rename cutBullet to cutString and find +1 place to use it
+- Move code to `lib/`, rename files and update package.json
 
 ## [0.0.2][] - 2022-04-26
 
