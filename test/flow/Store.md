@@ -13,8 +13,8 @@
   + Notify "The product was successfully sent"
   - Notify "The product was not sent"
 * Finalization
-  + Product feedback
-  + Service feedback
+  + Notify "Please provide product feedback"
+  + Notify "Please provide service feedback"
 
 # Reservation
 

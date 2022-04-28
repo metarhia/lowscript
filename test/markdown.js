@@ -5,7 +5,7 @@ const metatests = require('metatests');
 const lowscript = require('..');
 
 metatests.test('Markdown parsing example', async (test) => {
-  const fileName = `./test/examples/Store.md`;
+  const fileName = `./test/flow/Store.md`;
   const src = await fsp.readFile(fileName, 'utf8');
   const bp = lowscript.parseMarkdown(src);
   test.strictSame(bp[0].name, 'Order product');
