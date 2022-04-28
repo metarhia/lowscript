@@ -7,16 +7,16 @@ export interface DomainStep {
   finalization: Array<string>;
 }
 
-export interface DomainProcedure {
+export interface DomainProcess {
   name: string;
   body: Array<DomainStep>;
 }
 
 export class Runtime extends EventEmitter {
-  processes: Map<string, DomainProcedure>;
+  processes: Map<string, DomainProcess>;
   constructor();
-  register(processes: Array<DomainProcedure>);
+  register(processes: Array<DomainProcess>);
   exec(name: string);
 }
 
-export function parseMarkdown(src: string): Array<DomainProcedure>;
+export function parseMarkdown(src: string): Array<DomainProcess>;
