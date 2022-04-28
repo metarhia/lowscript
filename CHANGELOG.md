@@ -2,6 +2,8 @@
 
 ## [Unreleased][unreleased]
 
+- Fix context for forms: include main process context
+
 ## [0.0.3][] - 2022-04-28
 
 - Rename cutBullet to cutString and find +1 place to use it
