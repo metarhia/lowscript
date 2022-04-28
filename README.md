@@ -9,12 +9,12 @@ Set of DSL syntaxes for low-code with Metarhia technology stack
 
 ### Parse markdown-based domain process script
 
-Syntax: `parseProcess(src: string): Array<DomainProcedure>;`
+Syntax: `parseMarkdown(src: string): Array<DomainProcess>;`
 
 Result structure:
 
 ```js
-interface DomainProcedure {
+interface DomainProcess {
   name: string;
   body: Array<DomainStep>;
 }
