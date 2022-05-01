@@ -71,3 +71,40 @@ metatests.test('Runtime example', async (test) => {
 
   test.end();
 });
+
+metatests.test('Runtime step prevent mixins', async (test) => {
+  const model = await Model.load('./test/schemas');
+  const procedures = await loadProcedures('./test/mixins');
+
+  const src = await fsp.readFile('./test/flow/Store.md', 'utf8');
+  const processes = collection(parseMarkdown(src));
+
+  const runtime = new Runtime({ processes, procedures, model });
+
+  runtime.on('form/show', (step) => {
+    let data = {};
+    if (step.command === 'Form `Order`') {
+      data = {
+        product: 'Motorola Edge 20 Pro',
+        carrier: 'Postal service',
+        amount: 2,
+      };
+    }
+    if (step.command === 'Form `Payment`') {
+      data = {
+        amount: 20000,
+      };
+    }
+    runtime.emit('form/submit', data);
+  });
+
+  try {
+    await runtime.exec('Order product');
+  } catch (err) {
+    const e = 'Cannot add property mixin, object is not extensible';
+    test.strictSame(err.message, e);
+    test.strictSame(runtime.context.order.mixin, undefined);
+  }
+
+  test.end();
+});
