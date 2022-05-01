@@ -2,6 +2,8 @@
 
 ## [Unreleased][unreleased]
 
+- Freeze previous steps context keys
+
 ## [0.0.4][] - 2022-04-28
 
 - Fix context for forms: include main process context
