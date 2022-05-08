@@ -2,7 +2,7 @@
 
 ## [Unreleased][unreleased]
 
-- Freeze previous steps context keys
+- Freeze context and previous steps keys in context
 - Improve markdown syntax
 
 ## [0.0.4][] - 2022-04-28
