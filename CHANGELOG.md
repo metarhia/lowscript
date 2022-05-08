@@ -2,6 +2,8 @@
 
 ## [Unreleased][unreleased]
 
+## [0.0.5][] - 2022-05-08
+
 - Freeze context and previous steps keys in context
 - Improve markdown syntax
 
@@ -28,9 +30,10 @@
 
 - Publish npm package stub
 
-[unreleased]: https://github.com/metarhia/lowscript/compare/v0.0.4....HEAD
-[0.0.4]: https://github.com/metarhia/lowscript/releases/tag/v0.0.4
-[0.0.3]: https://github.com/metarhia/lowscript/releases/tag/v0.0.3
-[0.0.2]: https://github.com/metarhia/lowscript/releases/tag/v0.0.2
-[0.0.1]: https://github.com/metarhia/lowscript/releases/tag/v0.0.1
+[unreleased]: https://github.com/metarhia/lowscript/compare/v0.0.5....HEAD
+[0.0.5]: https://github.com/metarhia/lowscript/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/metarhia/lowscript/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/metarhia/lowscript/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/metarhia/lowscript/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/metarhia/lowscript/compare/v0.0.0...v0.0.1
 [0.0.0]: https://github.com/metarhia/lowscript/releases/tag/v0.0.0
