@@ -3,6 +3,7 @@
 ## [Unreleased][unreleased]
 
 - Freeze previous steps context keys
+- Improve markdown syntax
 
 ## [0.0.4][] - 2022-04-28
 

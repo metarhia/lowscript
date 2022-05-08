@@ -2,19 +2,19 @@
 
 * Form `Order`
 * Reservation
-  - Notify "The product is out of stock"
+  * `-` Notify "The product is out of stock"
 * Form `Payment`
 * Payment
-  + Notify "Payment was successful"
-  - > Return payment
+  * `+` Notify "Payment was successful"
+  * `<` Return payment
 * Pick up from the warehouse
-  - > Return to the warehouse
+  * `<` Return to the warehouse
 * Shipping by carrier
-  + Notify "The product was successfully sent"
-  - Notify "The product was not sent"
+  * `+` Notify "The product was successfully sent"
+  * `-` Notify "The product was not sent"
 * Finalization
-  + Notify "Please provide product feedback"
-  + Notify "Please provide service feedback"
+  * `+` Notify "Please provide product feedback"
+  * `+` Notify "Please provide service feedback"
 
 # Reservation
 
@@ -25,7 +25,7 @@
 # Pick up from the warehouse
 
 * `pickProduct(Reservation): Package`
-* `removeReservation(Reservation)`
+  * `-` `removeReservation(Reservation)`
 
 # Return to the warehouse
 
