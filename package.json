@@ -20,7 +20,7 @@
     "lowscript.d.ts"
   ],
   "engines": {
-    "node": "^12.9 || 14 || 16 || 17 || 18"
+    "node": "14 || 16 || 17 || 18"
   },
   "repository": {
     "type": "git",
