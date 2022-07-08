@@ -2,6 +2,9 @@
 
 ## [Unreleased][unreleased]
 
+- Upgrade to metaschema 2.x
+- Package maintenance
+
 ## [0.0.5][] - 2022-05-08
 
 - Freeze context and previous steps keys in context

@@ -5,7 +5,7 @@ const fsp = require('fs').promises;
 const { EventEmitter } = require('events');
 const metavm = require('metavm');
 const metatests = require('metatests');
-const { Model } = require('metaschema');
+const { loadModel } = require('metaschema');
 const { Runtime, parseMarkdown } = require('..');
 
 const loadProcedures = async (targetPath) => {
@@ -27,7 +27,7 @@ const collection = (array) => {
 };
 
 metatests.test('Runtime example', async (test) => {
-  const model = await Model.load('./test/schemas');
+  const model = await loadModel('./test/schemas');
   const procedures = await loadProcedures('./test/store');
 
   const src = await fsp.readFile('./test/flow/Store.md', 'utf8');
@@ -73,7 +73,7 @@ metatests.test('Runtime example', async (test) => {
 });
 
 metatests.test('Runtime step prevent mixins', async (test) => {
-  const model = await Model.load('./test/schemas');
+  const model = await loadModel('./test/schemas');
   const procedures = await loadProcedures('./test/mixins');
 
   const src = await fsp.readFile('./test/flow/Store.md', 'utf8');
@@ -110,7 +110,7 @@ metatests.test('Runtime step prevent mixins', async (test) => {
 });
 
 metatests.test('Runtime context prevent mixins', async (test) => {
-  const model = await Model.load('./test/schemas');
+  const model = await loadModel('./test/schemas');
   const procedures = await loadProcedures('./test/store');
 
   const src = await fsp.readFile('./test/flow/Store.md', 'utf8');
