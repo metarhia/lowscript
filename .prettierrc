@@ -1,9 +1,9 @@
 {
   "singleQuote": true,
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "overrides": [
     {
-      "files": ["**/.*rc"],
+      "files": ".prettierrc",
       "options": { "parser": "json" }
     }
   ]
