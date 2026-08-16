@@ -5,6 +5,9 @@
   driver: 'pg',
 
   authors: [
-    { name: 'Timur Shemsedinov', email: 'timur.shemsedinov@gmail.com' },
+    {
+      name: 'Timur Shemsedinov',
+      email: 'timur.shemsedinov@gmail.com',
+    },
   ],
 });
