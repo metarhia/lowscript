@@ -15,8 +15,8 @@ export interface DomainProcess {
 export class Runtime extends EventEmitter {
   processes: Map<string, DomainProcess>;
   constructor();
-  register(processes: Array<DomainProcess>);
-  exec(name: string);
+  register(processes: Array<DomainProcess>): void;
+  exec(name: string): Promise<void>;
 }
 
 export function parseMarkdown(src: string): Array<DomainProcess>;
