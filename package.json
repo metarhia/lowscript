@@ -20,7 +20,7 @@
     "lowscript.d.ts"
   ],
   "engines": {
-    "node": "14 || 16 || 18"
+    "node": ">=18"
   },
   "repository": {
     "type": "git",
@@ -36,24 +36,25 @@
     "url": "https://www.patreon.com/tshemsedinov"
   },
   "scripts": {
-    "test": "npm run lint && metatests test/",
-    "lint": "eslint . && prettier --check \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\"",
-    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\""
+    "build": "metarhia-build lib",
+    "test": "npm run lint && npm run types && node --test",
+    "types": "tsc -p tsconfig.json",
+    "lint": "eslint . && prettier --check \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.ts\"",
+    "fix": "eslint . --fix && prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.ts\""
   },
   "devDependencies": {
-    "@types/node": "^18.0.3",
-    "eslint": "^8.19.0",
-    "eslint-config-metarhia": "^8.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "metatests": "^0.8.2",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "@types/node": "^25.9.5",
+    "eslint": "^9.39.5",
+    "eslint-config-metarhia": "^9.1.9",
+    "metarhia-build": "^0.0.3",
+    "metaskills": "^1.0.4",
+    "metatests": "^0.9.3",
+    "prettier": "^3.8.4",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "metaschema": "^2.0.2",
-    "metautil": "^3.5.21",
+    "metaschema": "^2.2.2",
+    "metautil": "^5.5.2",
     "metavm": "^1.2.1"
   }
 }
