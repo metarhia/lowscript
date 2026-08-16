@@ -31,6 +31,6 @@ interface DomainStep {
 
 ## License & Contributors
 
-Copyright (c) 2021-2022 [Metarhia contributors](https://github.com/metarhia/lowscript/graphs/contributors).
+Copyright (c) 2021-2026 [Metarhia contributors](https://github.com/metarhia/lowscript/graphs/contributors).
 Lowscript is [MIT licensed](./LICENSE).\
 Lowscript is a part of [Metarhia](https://github.com/metarhia) technology stack.
